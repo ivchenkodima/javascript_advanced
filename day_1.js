@@ -148,9 +148,17 @@ timeRecurcion = timeRecurcion.now() - timeRecurcion;
 alert("Difference in "+ (timeRecurcion / timeLoop) +"times"); 
 
 
-
-
-
+// this
+var user = {
+	name:'Dima',
+	sayHi: function(){
+		showName(this);
+	}
+};
+function showName(nameObj){
+	alert( nameObj.name);
+}
+user.sayHi();
 
 
 
