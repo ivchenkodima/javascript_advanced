@@ -87,11 +87,11 @@ alert(filter(arr, inArray([1,2,10])));
 function makeArmy() {
   var shooters = [];
   for (var i = 0; i < 10; i++) {
-    var shooter = (function(i) {
+    var shooter = function(i) {
       return function() {
         alert( i );
       };
-    })(i);
+    }(i);
     shooters.push(shooter);
   }
   return shooters;
@@ -102,7 +102,25 @@ army[0](); // 0
 army[1](); // 1
 
 
+// lodash
+<p>Подключим библиотеку</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"></script>
 
+<p>Функция <code>_.defaults()</code> добавляет отсутствующие свойства.</p>
+<script>
+  var user = {
+    name: 'Вася'
+  };
+
+  _.defaults(user, {
+    name: 'Не указано',
+    employer: 'Не указан'
+  });
+
+  alert( user.name ); // Вася
+  alert( user.employer ); // Не указан
+  alert( _.size(user) ); // 2
+</script>
 
 
 
