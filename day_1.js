@@ -123,6 +123,31 @@ army[1](); // 1
 </script>
 
 
+// perfomance test
+
+function sumTo(n){
+	var result = 0;
+	for(var i = 0 ; i < n; i++{
+		result += i;
+	}
+	return result;
+}
+
+function sumToRecurcion(n){
+	return n == 1 ? 1 : n + sumToRecurcion(n-1);	
+}
+
+var timeLoop = performance.now();
+for(var i =0 ; i < 1000; i++) sumTo(1000);
+	timeLoop = performance.now() - timeLoop;
+
+var timeRecurcion = performance.now();
+for (var i = 0; i < n; i ++) sumToRecurcion(1000);
+timeRecurcion = timeRecurcion.now() - timeRecurcion;
+
+alert("Difference in "+ (timeRecurcion / timeLoop) +"times"); 
+
+
 
 
 
