@@ -83,6 +83,24 @@ alert(filter(arr, function(a){
 alert(filter(arr, inBetween(3,6)) );
 alert(filter(arr, inArray([1,2,10])));
 
+// shooters
+function makeArmy() {
+  var shooters = [];
+  for (var i = 0; i < 10; i++) {
+    var shooter = (function(i) {
+      return function() {
+        alert( i );
+      };
+    })(i);
+    shooters.push(shooter);
+  }
+  return shooters;
+}
+
+var army = makeArmy();
+army[0](); // 0
+army[1](); // 1
+
 
 
 
