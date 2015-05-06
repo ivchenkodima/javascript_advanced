@@ -31,15 +31,14 @@ alert(q.reset());
 alert(a.set(10));
 
 
-// 111111111111111
-
+// ******************** замыкания
 function two(a){
 	return function(b){
 		return a + b;
 	}
 }
 alert(w(1)(2);
-	
+// *******************
 
 var user = [{
     name:"Dima",
@@ -56,11 +55,34 @@ function sortby(field){
         return a[field] > b[field] ? -1 :1;
     }
 }
-
 user.sort(sortby("age"));
 user.forEach(function(user){
     alert(user.name)
 });
+
+// sort by function
+function filter(arr, funct){
+    var result = [];
+    for(var i =0 ; i < arr.lenght; i++){
+        var val = arr[i];
+        if(funct(value)){
+        result.push(val);
+        }
+    }
+    return result;
+}
+function inArray(arr){
+    return function(x){
+        return arr.indexOf(x) !=-1;
+    };
+}
+var arr = [1,2,3,4,5,6,7];
+alert(filter(arr, function(a){
+    return a%2 ==0;
+}));
+alert(filter(arr, inBetween(3,6)) );
+alert(filter(arr, inArray([1,2,10])));
+
 
 
 
