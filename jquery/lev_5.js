@@ -43,3 +43,14 @@ $(document).ready(function() {
   $('.photos').on("mouseenter", "li", showPhotos);
   $('.photos').on("mouseleave", "li", showPhotos);
 });
+
+// cHANGING FIELDS
+$(document).ready(function() {
+  $("#nights").on("keyup", function() {
+    var nights = +$(this).val();
+    var dailyPrice = +$(this).closest(".tour").data("daily-price");
+    $("#total").text(nights * dailyPrice);
+    $("#nights-count").text($(this).val());
+  });
+});
+
